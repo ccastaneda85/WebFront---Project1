@@ -1,11 +1,12 @@
 const questions = [
      {
-        question: "Which is largest animal in the world?",
+        question: "Which tag makes text bold?",
         answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Elephant", correct: false },
-            { text: "Giraffe", correct: false },
+            { text: " &#60bold&#62 ", correct: false },
+            { text: "&ltb&gt", correct: true },
+            { text: "&ltstrong&gt", correct: false },
+            { text: "&ltbld&gt", correct: false },
+            
         ]
      },
      {
@@ -114,8 +115,8 @@ function selectAnswer(e) {
 
 function showScore() {
     resetState();
-    let x = Math.round((score / questions.length)) * 100;
-    questionElement.innerHTML = `Your score: ${x}%. ${score} out of ${questions.length}!`;
+    let percentage = Math.round((score / questions.length) * 100).toFixed(1);
+    questionElement.innerHTML = `Your score: ${percentage}%. ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Retake Quiz";
     nextButton.style.display = "block";
 }
