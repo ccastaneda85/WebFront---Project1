@@ -1,60 +1,98 @@
-const questions = [
-     {
-        question: "Which tag makes text bold?",
+let questions = [
+    {
+        question: "What does HTML stand for?",
         answers: [
-            { text: " &#60bold&#62 ", correct: false },
-            { text: "&ltb&gt", correct: true },
-            { text: "&ltstrong&gt", correct: false },
-            { text: "&ltbld&gt", correct: false },
-            
+            { text: "Hyperlinks and Text Markup Language", correct: false },
+            { text: "Hyper Text Markup Language", correct: true },
+            { text: "Home Tool Markup Language", correct: false },
+            { text: "Hyper Tool Markup Language", correct: false },
         ]
-     },
-     {
-        question: "Which is largest animal in the world?",
+    },
+    {
+        question: "Which HTML element is used to specify a footer for a document or section?",
         answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Elephant", correct: false },
-            { text: "Giraffe", correct: false },
+            { text: "&lt;footer&gt;", correct: true },
+            { text: "&lt;bottom&gt;", correct: false },
+            { text: "&lt;section&gt;", correct: false },
+            { text: "&lt;div&gt;", correct: false },
         ]
-     },
-     {
-        question: "Which is largest animal in the world?",
+    },
+    {
+        question: "Which HTML attribute is used to specify that an input field must be filled out?",
         answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Elephant", correct: false },
-            { text: "Giraffe", correct: false },
+            { text: "placeholder", correct: false },
+            { text: "required", correct: true },
+            { text: "formvalidate", correct: false },
+            { text: "validate", correct: false },
         ]
-     },
-     {
-        question: "Which is largest animal in the world?",
+    },
+    {
+        question: "Which HTML element is used to define important text?",
         answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Elephant", correct: false },
-            { text: "Giraffe", correct: false },
+            { text: "&lt;important&gt;", correct: false },
+            { text: "&lt;b&gt;", correct: false },
+            { text: "&lt;strong&gt;", correct: true },
+            { text: "&lt;i&gt;", correct: false },
         ]
-     },
-     {
-        question: "Which is largest animal in the world?",
+    },
+    {
+        question: "Which HTML element is used to define a hyperlink?",
         answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Elephant", correct: false },
-            { text: "Giraffe", correct: false },
+            { text: "&lt;link&gt;", correct: false },
+            { text: "&lt;a&gt;", correct: true },
+            { text: "&lt;url&gt;", correct: false },
+            { text: "&lt;web&gt;", correct: false },
         ]
-     },
-     {
-        question: "Which is largest animal in the world?",
+    },
+    {
+        question: "Which HTML element is used to define a list item?",
         answers: [
-            { text: "Shark", correct: false },
-            { text: "Blue whale", correct: true },
-            { text: "Elephant", correct: false },
-            { text: "Giraffe", correct: false },
+            { text: "&lt;li&gt;", correct: true },
+            { text: "&lt;item&gt;", correct: false },
+            { text: "&lt;list&gt;", correct: false },
+            { text: "&lt;ul&gt;", correct: false },
         ]
-     },
+    },
+    {
+        question: "Which HTML element is used to define metadata about an HTML document?",
+        answers: [
+            { text: "&lt;meta&gt;", correct: true },
+            { text: "&lt;data&gt;", correct: false },
+            { text: "&lt;info&gt;", correct: false },
+            { text: "&lt;metadata&gt;", correct: false },
+        ]
+    },
+    {
+        question: "Which HTML element is used to define a table cell?",
+        answers: [
+            { text: "&lt;cell&gt;", correct: false },
+            { text: "&lt;td&gt;", correct: true },
+            { text: "&lt;tabledata&gt;", correct: false },
+            { text: "&lt;data&gt;", correct: false },
+        ]
+    },
+    {
+        question: "Which HTML element is used to define a drop-down list?",
+        answers: [
+            { text: "&lt;dropdown>", correct: false },
+            { text: "&lt;list>", correct: false },
+            { text: "&lt;select>", correct: true },
+            { text: "&lt;option>", correct: false },
+        ]
+    },
+    {
+        question: "Which HTML element is used to define a form for user input?",
+        answers: [
+            { text: "&lt;input>", correct: false },
+            { text: "&lt;form>", correct: true },
+            { text: "&lt;userinput>", correct: false },
+            { text: "&lt;textfield>", correct: false },
+        ]
+    }
 ];
+
+// Randomize the order of the questions
+questions = questions.sort(() => Math.random() - 0.5);
 
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
